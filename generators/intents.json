@@ -1,0 +1,412 @@
+{
+  "intents": [
+    {
+      "mytag": "greeting",
+      "patterns": [
+        "Hello there",
+        "Hi",
+        "Greetings",
+        "How are you?",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "Good morning",
+        "What's up",
+        "how are ya",
+        "hey",
+        "whatsup"
+      ],
+      "responses": [
+        "Hello! How can I help you  today?",
+        "Hello! How can I assist you  today?",
+        "Hi! How can I assist you  today?",
+        "Hello! How can I assist you  today?",
+        "Hi! It's good to see you again!",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "mytag": "goodbye",
+      "patterns": [
+        "cya",
+        "see you",
+        "bye bye",
+        "See you later",
+        "Goodbye",
+        "I am Leaving",
+        "Bye",
+        "Have a Good day",
+        "talk to you later"
+      ],
+      "responses": [
+        "Sad to see you go :(",
+        "Talk to you later",
+        "Goodbye!",
+        "Come back soon"
+      ]
+    },
+    {
+      "mytag": "creator",
+      "patterns": [
+        "what is the name of your developers",
+        "what is the name of your creators",
+        "what is the name of the developers",
+        "what is the name of the creators",
+        "who created you",
+        "your developers",
+        "your creators",
+        "who are your developers",
+        "developers",
+        "you are made by",
+        "you are made by whom",
+        "who created you",
+        "who create you",
+        "creators",
+        "who made you",
+        "who designed you"
+      ],
+      "responses": [
+        "College students",
+        "Machakos university students",
+        "Compuer science students"
+      ]
+    },
+    {
+      "mytag": "name",
+      "patterns": [
+        "name",
+        "your name",
+        "do you have a name",
+        "what are you called",
+        "what is your name",
+        "what should I call you",
+        "whats your name?",
+        "what are you",
+        "who are you",
+        "who is this",
+        "what am i chatting to",
+        "who am i taking to",
+        "what are you"
+      ],
+      "responses": [
+        "I'm All time assistant",
+        "I am a customer care Chatbot.",
+        "I am your helper"
+      ]
+    },
+    {
+      "mytag": "hours",
+      "patterns": [
+        "timing of college",
+        "what is college timing",
+        "working days",
+        "when are you guys open",
+        "what are your hours",
+        "hours of operation",
+        "when is the college open",
+        "college timing",
+        "what about college timing",
+        "is college open on saturday",
+        "tell something about college timing",
+        "what is the college  hours",
+        "when should i come to college",
+        "when should i attend college",
+        "what is my college time",
+        "college timing",
+        "timing college"
+      ],
+      "responses": ["College is open 8am-5pm Monday-Saturday!"]
+    },
+    {
+      "mytag": "number",
+      "patterns": [
+        "more info",
+        "contact info",
+        "how to contact college",
+        "college telephone number",
+        "college number",
+        "What is your contact no",
+        "Contact number?",
+        "how to call you",
+        "College phone no?",
+        "how can i contact you",
+        "Can i get your phone number",
+        "how can i call you",
+        "phone number",
+        "phone no",
+        "call"
+      ],
+      "responses": [
+        "You can contact at: 0716216730",
+        "You can visit the school official website at <a href=\"https://mksu.ac.ke\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "course",
+      "patterns": [
+        "can you give me the list of courses available at the university",
+        "list of courses offered in",
+        "what are the courses offered in your college?",
+        "courses?",
+        "courses offered",
+        "courses offered in Machakos",
+        "courses you offer",
+        "branches?",
+        "courses available at UNI?",
+        "branches available at your college?",
+        "what are the courses in UNI?",
+        "what are branches in UNI?",
+        "what are courses in UNI?",
+        "branches available in UNI?",
+        "can you tell me the courses available in UNI?",
+        "can you tell me the branches available in UNI?"
+      ],
+      "responses": [
+        "Our university offers the following courses among others: -* Information Technology -*  -* computer Engineering,  -*   -* Mechanical engineering,-*  -* Chemical engineering,  -*   -* Civil engineering   -*   Get more information about these and other courses  <a href=\"https://mksu.ac.ke\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "fees",
+      "patterns": [
+        "information about fee",
+        "information on fee",
+        "tell me the fee",
+        "college fee",
+        "fee per semester",
+        "what is the fee of each semester",
+        "what is the fees of each year",
+        "what is fee",
+        "what is the fees",
+        "how much is the fees",
+        "fees for first year",
+        "fees",
+        "about the fees",
+        "tell me something about the fees",
+        "What is the fees of hostel",
+        "how much is the fees",
+        "hostel fees"
+      ],
+      "responses": [
+        "For Fee detail visit <a href=\"https://mksu.ac.ke\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "location",
+      "patterns": [
+        "where is the college located",
+        "college is located at",
+        "where is college",
+        "where is college located",
+        "address of college",
+        "how to reach college",
+        "college location",
+        "college address",
+        "wheres the college",
+        "how can I reach college",
+        "whats is the college address",
+        "what is the address of college",
+        "address",
+        "location"
+      ],
+      "responses": ["<a href=\"https://mksu.ac.ke\"> here</a>"]
+    },
+    {
+      "mytag": "hostel",
+      "patterns": [
+        "hostel facility",
+        "hostel services",
+        "hostel location",
+        "hostel address",
+        "hostel facilities",
+        "hostel fees",
+        "Does college provide hostel",
+        "Is there any hostel",
+        "Where is hostel",
+        "do you have hostel",
+        "do you guys have hostel",
+        "hostel",
+        "hostel capacity",
+        "what is the hostel fee",
+        "how to get in hostel",
+        "what is the hostel address",
+        "how far is hostel from college",
+        "hostel college distance",
+        "where is the hostel",
+        "how big is the hostel",
+        "distance between college and hostel",
+        "distance between hostel and college"
+      ],
+      "responses": [
+        "For hostel detail visit <a href=\"https://mksu.ac.ke\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "event",
+      "patterns": [
+        "events organised",
+        "list of events",
+        "list of events organised in college",
+        "list of events conducted in college",
+        "What events are conducted in college",
+        "Are there any event held at college",
+        "Events?",
+        "functions",
+        "what are the events",
+        "tell me about events",
+        "what about events"
+      ],
+      "responses": [
+        "For event detail visit <a href=\"https://mksu.ac.ke\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "document",
+      "patterns": [
+        "document to bring",
+        "documents needed for admision",
+        "documents needed at the time of admission",
+        "documents needed during admission",
+        "documents required for admision",
+        "documents required at the time of admission",
+        "documents required during admission",
+        "What document are required for admission",
+        "Which document to bring for admission",
+        "documents",
+        "what documents do i need",
+        "what documents do I need for admission",
+        "documents needed"
+      ],
+      "responses": [
+        "To know more about document required visit <a href=\"https://mksu.ac.ke\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "Students portal",
+      "patterns": [
+        "Students portal",
+        "How to access the student's portal",
+        "How to log in to the student's portal",
+        "What do i need to access the students portal.",
+        "What is the students portal?!"
+      ],
+      "responses": [
+        "You can access the student portal through our website using your login credentials.",
+        "The student portal can be accessed via our website. Log in using your username and password.",
+        "To access the student portal, visit our website and log in with your provided credentials.",
+        "Access to the student portal is available on our website. Log in using the username and password provided to you."
+      ]
+    },
+    {
+      "mytag": "syllabus",
+      "patterns": [
+        "Syllabus for IT",
+        "what is the Information Technology syllabus",
+        "syllabus",
+        "timetable",
+        "what is IT syllabus",
+        "syllabus",
+        "What is next lecture"
+      ],
+      "responses": [
+        "Timetable provide direct to the students OR To know about syllabus visit <a href=\"TIMETABLE LINK\"> here</a>"
+      ]
+    },
+    {
+      "mytag": "Exam bank",
+      "patterns": [
+        "How can i access the Exams bank.",
+        "What is the exams bank."
+      ],
+      "responses": [
+        "Past exam papers are available in the exam bank section of our website. You can access <a href=\"EXAM BANK LINK\"> here</a> ",
+        "You can find past exam papers in the exam bank on our website.",
+        "Access past exam papers through the exam bank on our website.",
+        "Past exam papers are archived in the exam bank on our website for reference."
+      ]
+    },
+    {
+      "mytag": "library",
+      "patterns": [
+        "is there any library",
+        "library facility",
+        "library facilities",
+        "do you have library",
+        "does the college have library facility",
+        "college library",
+        "where can i get books",
+        "book facility",
+        "Where is library",
+        "Library",
+        "Library information",
+        "Library books information",
+        "Tell me about library",
+        "how many libraries"
+      ],
+      "responses": [
+        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a href=\"ADD LIBRARY DETAIL LINK\">here</a>"
+      ]
+    },
+    {
+      "mytag": "infrastructure",
+      "patterns": [
+        "how is college infrastructure",
+        "infrastructure",
+        "college infrastructure",
+        "how is the collage infrastructure"
+      ],
+      "responses": [
+        "Our University has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
+      ]
+    },
+    {
+      "mytag": "crop_market_analysis",
+      "patterns": [
+        "Market analysis for {crop}",
+        "Current crop prices",
+        "Best markets for selling {crop}"
+      ],
+      "responses": [
+        "Analyzing the market for {crop}. Specify your location or ask for general market trends."
+      ]
+    },
+    {
+      "mytag": "Unit Registration",
+      "patterns": [
+        "Units registration",
+        "where cai i register my units?",
+        "i have a problem with my units registration, can you help?"],
+      "responses": [
+        "-* Unit registration can be done online through the <a href=\"student portal\"> student portal.</a> -* -*To register for units, log in to the student portal and follow the registration instructions. -* -* REMEMBER you must pay at least 75% of the fee of the current semester -*",
+        "Unit registration is conducted online via the student portal. Log in to complete your registration online."
+      ]
+    },
+    {
+      "mytag": "test1",
+      "patterns": ["test1", "UI Test", "UI check"],
+      "responses": [
+        "Sure, I'd be happy to help you understand the differences between Django and React.js: ### Django:###  Let's start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href=\"https://chatgpt.com\">this</a> link or visit   <a href=\"https://chatgpt.com\">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href=\"https://chatgpt.com\">this</a> link or visit   <a href=\"https://chatgpt.com\">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href=\"https://chatgpt.com\">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href=\"https://chatgpt.com\">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href=\"https://chatgpt.com\">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href=\"https://chatgpt.com\">this site</a> for more info  "
+      ]
+    },
+    {
+      "mytag": "test2",
+      "patterns": ["test2", "UI Test", "UI check"],
+      "responses": [
+        "###This is h1### ***this is h3*** -* Hello-* -#Hello there <a href=\"https://chatgpt.com\">here</a> copy. -# This is a plain text... <a href=\"https://chatgpt.com\">here</a> and a lomnk   -# I'M mutai hillary  <a href=\"https://chatgpt.com\">here</a> a link -# -* Hello best fri-* -#I'm a kenyan -# <a href=\"https://chatgpt.com\">here</a>  !| -# I'm a s/w developer-#  -# I thin AI is cool....-#  -* Unordered link . <a href=\"https://chatgpt.com\">here</a> is here -*"
+      ]
+    },
+    {
+      "mytag": "test3",
+      "patterns": ["test3", "UI Test", "UI check"],
+      "responses": [
+        "###This is h1### ***this is h3*** -* Hello-*  This is a plain text... <a href=\"https://chatgpt.com\">here</a> and a link    -* Unordered link . <a href=\"https://chatgpt.com\">here</a> is here -*"
+      ]
+    },
+    {
+      "mytag": "test4",
+      "patterns": ["test4", "UI Test", "UI check"],
+      "responses": [
+        "###This is h1### ***this is h3*** -* Hello-* -| Hello lets have an explanation: <a href=\"https://chatgpt.com\">here</a> ofcox with a link -| -#Hello there <a href=\"https://chatgpt.com\">here</a>  copy. -# This is a plain text... <a href=\"https://chatgpt.com\">here</a> and a lomnk   -# I'M mutai hillary  <a href=\"https://chatgpt.com\">here</a> a link -# -* Hello best fri-* -#I'm a kenyan -# <a href=\"https://chatgpt.com\">here</a>  !| -| Hello lets have an explanation: -| -# I'm a s/w developer-#  -# I thin AI is cool....-#  -* Unordered link . <a href=\"https://chatgpt.com\">here</a> is here -*"  
+      ]
+    }
+  ]
+}
