@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLP Chatbot - Your Learning Assistant</title>
+    <style>
+        :root {
+            --text-color: #ffffff;
+            --sugession-color: #ffffff;
+            --icon-color: #acacbe;
+            --border-color: #acacbe;
+            --icon-hover-bg: #0d6b72;
+            --placeholder-color: #dcdcdc;
+            --outgoing-chat-bg: #004d52;
+            --incoming-chat-bg: #c1f1fa;
+            --outgoing-chat-border: #004d52;
+            --timestamp-color: #09e1e9;
+            --incoming-chat-content-border: #004d52;
+            --outgoing-chat-content-border: #09e1e9;
+            --bg: #008089;
+            --modalbg: #004d52;
+            --a-color: #e8e8ed;
+            --status-color: #09e1e9;
+            --title-bg: #004d52;
+            --sugession-bg: #008089;
+        }
+
+        .light-mode {
+            --text-color: #16171d;
+            --sugession-color: #008089;
+            --icon-color: #004d52;
+            --border-color: #00a5b8;
+            --icon-hover-bg: #00747c;
+            --placeholder-color: #6c6c6c;
+            --outgoing-chat-bg: #c1f1fa;
+            --incoming-chat-bg: #ffffff;
+            --outgoing-chat-border: #00a5b8;
+            --timestamp-color: #004d52;
+            --incoming-chat-content-border: #00747c;
+            --outgoing-chat-content-border: #00a5b8;
+            --bg: #c1f1fa;
+            --modalbg: #ffffff;
+            --a-color: #00747c;
+            --status-color: #004d52;
+            --title-bg: #00a5b8;
+            --sugession-bg: #00747c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--title-bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--icon-hover-bg);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--modalbg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--timestamp-color);
+        }
+
+        .cta-button {
+            background-color: var(--timestamp-color);
+            color: var(--modalbg);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: fit-content;
+            margin: 2rem auto;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: var(--icon-hover-bg);
+            color: var(--text-color);
+        }
+
+        footer {
+            background-color: var(--title-bg);
+            padding: 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>PLP Chatbot</h2>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to PLP Chatbot</h1>
+            <p>Your AI-powered learning companion in the journey to become a skilled developer. Part of Power Learn Project's mission to train one million developers across Africa.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>24/7 Learning Support</h3>
+                <p>Get instant answers to your programming questions and guidance on your learning journey, any time of day.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Personalized Learning</h3>
+                <p>Receive customized recommendations and resources based on your skill level and learning goals.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Community Connection</h3>
+                <p>Stay connected with the PLP community and get updates on events, workshops, and opportunities.</p>
+            </div>
+        </section>
+
+        <a href="/api/messages" class="cta-button">Try PLP Chatbot Now</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Power Learn Project. Empowering Africa's Digital Future.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>

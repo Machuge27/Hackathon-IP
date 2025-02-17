@@ -1,141 +1,113 @@
-# Example dictionary
+# PLP Chatbot Suggestions Dictionary
 suggestions = {
     "Start": {
-        "Hello": {
-            "Student's portal.": [
-                    "How to access the student's portal",
-                    "How to log in to the student's portal",
-                    "What do i need to access the students portal.",
-                    "What is the students portal?!",
-                ],
-                "E-Learning.": [
-                    "Unit registration..",
-                    "How to sync my units.",
-                    "what is the E-Learning(LMS).",
-                    "Check for my current units.",
-                ],
-                "Curriculum offered.": [
-                    "I'm sorry to hear that.",
-                    "Oh no, that's not good.",
-                    "I hope things get better.",
-                    "I'm here if you need to talk.",
-                ],
-                "Exam bank.": [
-                    "How can i access the Exams bank.",
-                    "What is the exams bank."
-                ],
-                "E-Learning.": [
-                    "I'm sorry to hear that.",
-                    "Oh no, that's not good.",
-                    "I hope things get better.",
-                    "I'm here if you need to talk.",
-                ],
-                "Units registration.": [
-                    "I'm sorry to hear that.",
-                    "Oh no, that's not good.",
-                    "I hope things get better.",
-                    "I'm here if you need to talk.",
-                ]
-        },
-        "Admission": {
-            "Documents for student admission.": [
-                "Where can I find admission documents?",
-                "Sample Value 1 for Documents for student admission.",
-                "Sample Value 2 for Documents for student admission.",
+        "About PLP": {
+            "Who are we?": [
+                "What is Power Learn Project?",
+                "Tell me about PLP",
+                "What does PLP do?",
+                "What is PLP's mission?",
             ],
-            "Admission window.": [
-                "When is the admission period?",
-                "Sample Value 1 for Admission window.",
-                "Sample Value 2 for Admission window.",
+            "Leadership": [
+                "Who are PLP's leaders?",
+                "Tell me about PLP's leadership team",
+                "Who is in charge of PLP?",
+                "Who is the Executive Director of PLP?",
             ],
-            "How do get admitted.": [
-                "How can I find admission documents?",
-                "Sample Value 1 for How do get admitted.",
-                "Sample Value 2 for How do get admitted.",
+            "Board of Trustees": [
+                "Who are the board members?",
+                "Tell me about PLP's board",
+                "Who is on PLP's Board of Trustees?",
+                "Who is the Board Chairperson?",
             ],
-            "Admission requirements.": [
-                "What are the minimum grades for admission?",
-                "Sample Value 1 for Admission requirements.",
-                "Sample Value 2 for Admission requirements.",
+            "Program Countries": [
+                "Where does PLP operate?",
+                "Which countries have PLP programs?",
+                "Where is PLP located?",
+                "What are PLP's program countries?",
             ],
         },
-        "Fees inquiries.": {
-            "How can I pay my fees?": [
-                "You can pay your fees online through our website.",
-                "Visit the finance office for payment options.",
-                "Bank transfer is also available for fee payments.",
-                "Online payment portals are available for fee transactions.",
+        "Programs": {
+            "1 Million Devs Program": [
+                "What is the 1 Million Devs for Africa Program?",
+                "Tell me about the 16-week course",
+                "What programming languages do you teach?",
+                "Is the program free?",
             ],
-            "What are the tuition fees?": [
-                "Tuition fees vary depending on the program. Please check our website or contact the finance office for details.",
-                "For detailed information on tuition fees, please refer to our website or contact the finance department.",
-                "Tuition fees differ based on the program and course load. Please check with the finance office for accurate details.",
-                "The tuition fees are outlined in the student handbook. You can also inquire at the finance office for specifics.",
+            "County Model": [
+                "What is the County Model?",
+                "How does PLP work with counties?",
+                "Tell me about county programs",
+                "What is CIDP?",
+            ],
+            "Displaced Communities": [
+                "How does PLP help displaced communities?",
+                "Tell me about the displaced communities program",
+                "What support is available for displaced persons?",
+                "How can I help displaced communities?",
             ],
         },
-        "Curriculum offered.": {
-            "What courses are available?": [
-                "We offer a wide range of courses across various disciplines. You can find the complete list on our website or in the course catalog.",
-                "Our curriculum includes diverse courses designed to meet different interests and career goals. You can explore the offerings on our website or in the course catalog.",
-                "We provide a comprehensive curriculum covering various subjects. Please refer to our website or course catalog for detailed information.",
-                "Our curriculum encompasses a variety of courses tailored to different academic pursuits. Check our website or course catalog for specifics.",
-            ]
+        "Community": {
+            "Power Community": [
+                "What is the Power Community?",
+                "How can I join the community?",
+                "What activities happen in the community?",
+                "Tell me about community features",
+            ],
+            "Success Stories": [
+                "Who has succeeded through PLP?",
+                "Tell me about PLP alumni",
+                "Share some success stories",
+                "Who are PLP's successful graduates?",
+            ],
         },
-        "Units registration": {
-            "How do I register for units?": [
-                "Unit registration can be done online through the student portal.",
-                "To register for units, log in to the student portal and follow the registration instructions. REMEMBER you must pay at least 75% of the fee of the current semester",
-                "Unit registration is conducted online via the student portal. Log in to complete your registration.",
-                "Access the student portal to register for units online.",
-            ]
+        "Contact": {
+            "General Inquiries": [
+                "How can I contact PLP?",
+                "What is PLP's email address?",
+                "What is PLP's phone number?",
+                "How do I reach out to PLP?",
+            ],
+            "Academy Support": [
+                "How can I get help with my studies?",
+                "What is the academy support contact?",
+                "Who do I contact for academic issues?",
+                "How do I reach PLP academy?",
+            ],
+            "Partnerships": [
+                "How can I partner with PLP?",
+                "What is the partnerships email?",
+                "How do I collaborate with PLP?",
+                "Tell me about PLP partnerships",
+            ],
         },
-        "Evaluation.": {
-            "How are evaluations conducted?": [
-                "Evaluations are typically conducted through a combination of exams, assignments, and projects. Check your course syllabus for specific evaluation methods.",
-                "Evaluations include exams, quizzes, assignments, and projects. Refer to your course outline for evaluation criteria.",
-                "Evaluation methods vary by course and may include exams, essays, presentations, and more. Consult your course materials for details.",
-                "Evaluations are based on various factors such as exams, quizzes, assignments, and class participation. Review your course syllabus for evaluation details.",
-            ]
+        "Eligibility": {
+            "Program Requirements": [
+                "What do I need to join PLP?",
+                "What are the requirements?",
+                "Who can apply to PLP?",
+                "Am I eligible for PLP programs?",
+            ],
+            "Technical Requirements": [
+                "What equipment do I need?",
+                "Do I need coding experience?",
+                "What computer specifications are required?",
+                "Do I need internet access?",
+            ],
         },
-        "Examinations.": {
-            "When are the examinations held?": [
-                "Examination schedules vary by semester. Please refer to the academic calendar for specific dates.",
-                "Examination dates are listed in the academic calendar. Check there for the latest information.",
-                "The examination timetable is available on our website. Please consult it for your exam schedule.",
-                "Examination dates and times can be found in the examination timetable. Check the schedule for details.",
-            ]
-        },
-        "Hostels.": {
-            "How can I apply for hostel accommodation?": [
-                "You can apply for hostel accommodation through the accommodation office. Contact them for the application process and requirements.",
-                "To apply for hostel accommodation, visit the accommodation office and complete the application form.",
-                "Hostel accommodation applications are available through the accommodation office. Please inquire there for more information.",
-                "Contact the accommodation office to apply for hostel accommodation. They will assist you with the application process.",
-            ]
-        },
-        "Upcoming events.": {
-            "What events are happening soon?": [
-                "Stay updated on upcoming events by checking the events calendar on our website.",
-                "Upcoming events are listed on our website's events calendar. Take a look to see what's happening!",
-                "For information on upcoming events, visit our website or check the events calendar.",
-                "The events calendar on our website provides details on upcoming events. Check there for more information.",
-            ]
-        },
-        "School history.": {
-            "What is the history of our school?": [
-                "Our school has a rich history dating back to its founding. You can learn more about our history on our website or in our archives.",
-                "Our school has a long and storied history. Visit our website for an overview or contact the school archives for more detailed information.",
-                "Our school's history is filled with achievements and milestones. Explore our website or archives to learn more.",
-                "The history of our school is documented in our archives and on our website. Feel free to explore for more information.",
-            ]
-        },
-        "School location.": {
-            "Where is our school located?": [
-                "Our school is located at [Insert Address Here]. You can find directions on our website or contact us for assistance.",
-                "Our school is situated in [Insert City or Area Here]. For detailed directions, visit our website or contact our office.",
-                "You can find our school at [Insert Location Here]. Visit our website for directions or contact us if you need assistance.",
-                "Our school is conveniently located in [Insert City or Area Here]. Directions can be found on our website or by contacting our office.",
-            ]
+        "Impact": {
+            "Goals and Vision": [
+                "What is PLP's vision?",
+                "What are PLP's goals?",
+                "Tell me about PLP's impact",
+                "What is PLP trying to achieve?",
+            ],
+            "Success Metrics": [
+                "How many developers has PLP trained?",
+                "What is PLP's impact so far?",
+                "How successful is PLP?",
+                "Tell me about PLP's achievements",
+            ],
         },
     }
 }

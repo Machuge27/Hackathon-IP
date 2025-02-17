@@ -7,18 +7,17 @@ from .forms import CustomSignUpForm, CustomSignInForm
 from .models import User, Text, Message, Response
 from .serializers import UserMessagesSerializer
 import json, random
-from generators.chat import get_response
+from generators.utils.RAG import get_response
 from generators.suggestions import suggestionsGenerator
+
 
 # Initial suggestions
 initial_suggestions = [
-    "Hello there.",
-    "E-Learning.",
-    "Fees inquiries.",
-    "Students portal.",
-    "Curriculum offered.",
-    "Exam bank.",
-    "Units registration.",
+    "Tell me about PLP",
+    "Who is the Board Chairperson?",
+    "Is the program free?",
+    "What is CIDP?",
+    "Who are PLP's successful graduates?",
 ]
 
 # Function to generate suggestions
@@ -33,6 +32,8 @@ def get_tokens_for_user(user):
         "access": str(refresh.access_token),
     }
 
+def index(request):
+    return render(request, "backend/index.html")
 
 def sign_up(request):
     if request.method == "POST":
@@ -238,7 +239,11 @@ def chat_page(request):
     if not request.user.is_authenticated:
         return redirect("sign_in")
     user = request.user
-    return render(request, "backend/messages.html", {"user": user})
+    return render(
+        request,
+        "backend/messages.html",
+        {"user": user, "suggestions": initial_suggestions},
+    )
 
 
 def log_out(request):
@@ -262,22 +267,21 @@ def getResponse(request):
     if (request.method == "POST"):
         data = json.loads(request.body)
         prompt = data["prompt"]
-        print(prompt)
         response = get_response(prompt)
         print("RESPONSE:\n ", response)
-        
+
         matches, possible_suggestions, matching_values = suggestionsGenerator(prompt, None, partial_matching=True, case_sensitive=True)
         fps = []
         if matches:
             # for match in matches:
-                # print("MAtch:\n",match)                    
+            # print("MAtch:\n",match)
             for ps in possible_suggestions:
                 for key in ps:
                     fps.append(key)          
-                    # print("PS:",key)          
+                    # print("PS:",key)
         else:
             print("No matching values found.")
-        
+
         if (len(fps)  < 4):
             x = 4 - len(fps)
             suggestions = fps + generate_suggestions()[:x]
@@ -285,12 +289,12 @@ def getResponse(request):
             return JsonResponse({"response": response, "suggestions": suggestions})
         suggestions = random.sample(fps, 4)
         print("Suggestions: \n", suggestions)    
-        
+
         return JsonResponse({"response": response, "suggestions": suggestions})
     return jsonify({"error": "Invalid request method"}), 400
-    
+
     # pass
-    
+
     if request.method == "GET":
         data = request.get_json()
         prompt = data.get("prompt")
@@ -303,17 +307,17 @@ def getResponse(request):
         fps = []
         if matches:
             # for match in matches:
-                # print("MAtch:\n",match)                    
+            # print("MAtch:\n",match)
             for ps in possible_suggestions:
                 for key in ps:
                     fps.append(key)          
-                    # print("PS:",key)          
+                    # print("PS:",key)
         else:
             print("No matching values found.")
 
         # print("Method:\n ", request.method)
         # print("Prompt:\n ", prompt)
-        # print("FPS:\n",fps)    
+        # print("FPS:\n",fps)
         if (len(fps)  < 4):
             x = 4 - len(fps)
             suggestions = fps + generate_suggestions()[:x]
@@ -323,6 +327,5 @@ def getResponse(request):
         print("Suggestions: \n", suggestions)
         return jsonify({"response": response, "suggestions": suggestions})
     return jsonify({"error": "Invalid request method"}), 400
-    
-    # pass
 
+    # pass

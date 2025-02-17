@@ -58,352 +58,16 @@ let currentResponseIndex = 0;
 const defaultResponse =
     'Hello there!! This is MksU virtual assistant at your service. I\'ll be happy to help you with whatever inquiry you have about our institution! For further inquiries please find us at <a href="https://docs.chatgpt.com">https://myorg.help</a>.';
 const list = [
-    "Hello there.",
-    "Good morning",
-    "E-Learning.",
-    "Fees inquiries.",
-    "Students portal.",
-    "Curriculum offered.",
-    "Exam bank.",
-    "Units registration."
+    "Tell me about PLP",
+    "Who is the Board Chairperson?",
+    "Is the program free?",
+    "What is CIDP?",
+    "Who are PLP's successful graduates?",
 ];
+
+
 var messages1 = [
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'hello there',
-                    'hellooo!'
-                ]
-            },
-            {
-                text: "good morning",
-                responses: [
-                    'good morning too',
-                    'hello good morning',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "text",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -*Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -* -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "text1",
-                responses: [
-                    'Sure, I\'d be happy to help you understand the differences between Django and React.js: ### Django:###  Let\'s start with Django which is a well know python library for rapid development and deployment of web servers:-#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Type: -* -| Django is a high-level Python web framework that encourages rapid development and clean , pragmatic design. -| -*Backend: -* -| Django is primarily used for server-side development. It follows the Model-View-Template (MVT) architecture pattern. -| -#Follow <a href="https://chatgpt.com">this</a> link or visit   <a href="https://chatgpt.com">this page </a> to learn more. -# -*Features: -* -| Django provides a built-in ORM (Object-Relational Mapping) system, admin panel, authentication, and security features out of the box. -| -*Scalability: -* -| Django is known for its scalability and is suitable for building complex, data-driven websites. -| -# You can find the documentation -# <a href="https://chatgpt.com">here</a>  ### React.js: ### -*Type: -* -| React.js is a JavaScript library for building user interfaces, specifically for single-page applications. -|  -*Frontend:-* -| React.js is used for client-side development. It follows the component-based architecture. You can learn more <a href="https://chatgpt.com">here</a>. -| -*Features:-* -| React.js allows for the creation of reusable UI components, making the development process more efficient and modular. -|  -* You can find the documentation <a href="https://chatgpt.com">here</a>.-* I hope this was helpful in getting you know the difference between Django and react, please feel free to ask anything related to this. Otherwise you can visit <a href="https://chatgpt.com">this site</a> for more info  ',
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "Sample message 1",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>',
-                ]
-            }
-        ]
-    },
-    {
-        message: [
-            {
-                text: "hello",
-                responses: [
-                    'Hello! This is a sample response from ChatGPT. You can visit our website <a href="https://chatgpt.com">here</a>.Then:***Express.js:*** -#Express.js is a minimalist web framework for Node.js. -# It is commonly used for building APIs and web applications with Node.js.  ### Django: ###  -* Type: -* Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.  Visit us at : <a href="https://chatgpt.com">here</a>'
-                ]
-            },
-            {
-                text: "hello3",
-                responses: ["Hello there!3", "Hello how can I assist you3"]
-            }
-        ]
-    },
+    
     {
         message: [
             {
@@ -449,7 +113,55 @@ var messages1 = [
         ]
     },
 ];
-
+const patterns = [
+    // Links - Standard markdown link format [text](url)
+    { 
+        type: "link", 
+        regex: /\[([^\]]+)\]\(([^)]+)\)/ 
+    },
+    
+    // Headers - Markdown headers with different levels
+    { 
+        type: "header", 
+        regex: /^#{1,6}\s+(.+)$/ 
+    },
+    
+    // Subheaders - Using markdown bold with special designation
+    { 
+        type: "subheader", 
+        regex: /\*\*§\s*([^*]+)\*\*/ 
+    },
+    
+    // Ordered List - Using markdown numbered lists
+    { 
+        type: "ol", 
+        regex: /^\d+\.\s+(.+)$/ 
+    },
+    
+    // Unordered List - Using markdown bullet points
+    { 
+        type: "ul", 
+        regex: /^[-*+]\s+(.+)$/ 
+    },
+    
+    // Reset - Using markdown blockquote with special character
+    { 
+        type: "reset", 
+        regex: /^>\s*⟳\s*$/ 
+    },
+    
+    // Override - Using markdown blockquote with number
+    { 
+        type: "override", 
+        regex: /^>\s*⚡(\d+)\s*$/ 
+    },
+    
+    // Explanation - Using markdown blockquote with special formatting
+    { 
+        type: "expl", 
+        regex: /^>\s*ℹ️\s*(.+)$/ 
+    }
+];
 let messages;
 
 //modalOverlay.addEventListener("click", closeModal);
@@ -486,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //     // addSampleMessages(messages);
     //     generating = false;
     // } else {
-    //     addMessage("MksU-VA", defaultResponse, false);
+    //     addMessage("PLP-VA", defaultResponse, false);
     // }
     fetch('/api/user_messages/')
     .then(response => response.json())
@@ -901,7 +613,7 @@ function sendMessage() {
                         sendSvg.classList.add('disabled')
                         if (!isSpeaking) {
                             addNavigableResponse(
-                                "MKSU-VA",
+                                "PLP-VA",
                                 messageObject.message[currentTextIndex].responses,
                                 false,
                                 messageObject,
@@ -909,16 +621,7 @@ function sendMessage() {
                                 true
                             );
                         } else {
-                            const patterns = [
-                                { type: "link", regex: /<a href="[^"]+">([^<]+)<\/a>/g }, // Matches HTML anchor tags and captures inner text
-                                { type: "header", regex: /###([^#]+)###/g }, // Matches custom header format ###header### and captures inner text
-                                { type: "subheader", regex: /\*\*\*([^*]+)\*\*\*/g }, // Matches custom subheader format ***subheader*** and captures inner text
-                                { type: "ol", regex: /-#([^#]*)-#/g }, // Matches custom ordered list item format -#item-# and captures inner text
-                                { type: "ul", regex: /-\*([^*]*)-\*/g }, // Matches custom unordered list item format -*item-* and captures inner text
-                                { type: "reset", regex: /!\|/g }, // Matches custom reset sequence !|
-                                { type: "override", regex: /!\d+\|/g }, // Matches custom override sequence !digit|
-                                { type: "expl", regex: /-\|([^\|]*)-\|/g } // Matches custom explanation -|text|
-                            ];
+                            
 
                             function removePatterns(text) {
                                 let cleanedText = text;
@@ -999,7 +702,7 @@ function sendMessage() {
                 setTimeout(function () {
                     generating = true;
                     animateText = true;
-                    //addNavigableResponse("MKSU-VA", messageObject.message[currentTextIndex].responses, false, messageObject, null, true);
+                    //addNavigableResponse("PLP-VA", messageObject.message[currentTextIndex].responses, false, messageObject, null, true);
                 }, 500);
             } else {
                 kk.innerText = "Please enter something first...";
@@ -1334,212 +1037,140 @@ function new_chat() {
 function parseText(text) {
     // Define patterns for different types of elements
     const patterns = [
-        { type: "link", regex: /<a href="[^"]+">[^<]+<\/a>/ }, // Matches HTML anchor tags
-        { type: "header", regex: /###([^#]+)###/ }, // Matches custom header format ###header###
-        { type: "subheader", regex: /\*\*\*([^*]+)\*\*\*/ }, // Matches custom subheader format ***subheader***
-        { type: "ol", regex: /-#([^#]*)-#/ }, // Matches custom ordered list item format -#item-#
-        { type: "ul", regex: /-\*([^*]*)-\*/ }, // Matches custom unordered list item format -*item-*
-        { type: "reset", regex: /!\|/ }, // Matches custom reset sequence £|
-        { type: "override", regex: /!\d+\|/ }, // Matches custom override sequence |
-        { type: "expl", regex: /-\|([^\|]*)-\|/ }, // Matches custom explanation |
-        //{ type: "frame", regex: /-\|([^\|]*)-\|/ } // Matches custom explanation |
+        { type: "link", regex: /\[([^\]]+)\]\(([^)]+)\)/ }, // Matches Markdown links [text](url)
+        { type: "header", regex: /^#{1,6}\s+(.+)$/ }, // Matches Markdown headers #, ##, ###, etc.
+        { type: "subheader", regex: /\*\*§\s*([^*]+)\*\*/ }, // Matches custom subheader format **§text**
+        { type: "ol", regex: /^\d+\.\s+(.+)$/ }, // Matches ordered list items 1. item
+        { type: "ul", regex: /^[-*+]\s+(.+)$/ }, // Matches unordered list items - item, * item, + item
+        { type: "reset", regex: /^>\s*⟳\s*$/ }, // Matches reset sequence > ⟳
+        { type: "override", regex: /^>\s*⚡(\d+)\s*$/ }, // Matches override sequence > ⚡d
+        { type: "expl", regex: /^>\s*ℹ️\s*(.+)$/ }, // Matches explanation blocks > ℹ️ text
+        { type: "inlineCode", regex: /`([^`]+)`/ }, // Matches inline code `code`
     ];
 
-    let elements = []; // Array to hold the parsed elements
-    let index = 0; // Current position in the text
-    let olIndex = 1; // Current ordered list index
+    let elements = [];
+    let index = 0;
+    let olIndex = 1;
 
-    // Loop through the text until the end
     while (index < text.length) {
         let matched = false;
 
-        // Check each pattern to see if it matches the current position in the text
+        // Handle line-by-line for markdown patterns that require it
+        const currentLine = text.slice(index).split('\n')[0];
+
         for (const { type, regex } of patterns) {
-            const match = regex.exec(text.slice(index));
-            if (match && match.index === 0) {
+            let match;
+
+            // For patterns that need to match at line start
+            if (type === 'header' || type === 'ol' || type === 'ul' || type === 'reset' || type === 'override' || type === 'expl') {
+                match = regex.exec(currentLine);
+            } else {
+                match = regex.exec(text.slice(index));
+            }
+
+            if (match && (type === 'link' || type === 'subheader' || type === 'inlineCode' ? match.index === 0 : true)) {
                 let elementText = match[0];
 
                 // Handle reset sequence
                 if (type === "reset") {
-                    olIndex = 1; // Reset ordered list index
-                    elements.push({ type, match: elementText, index });
-                    index += match[0].length; // Move index past the matched element
+                    olIndex = 1;
+                    elements.push({ type, match: "⟳", index });
+                    index += currentLine.length + 1; // +1 for newline
                     matched = true;
                     break;
                 }
 
                 // Handle override sequence
                 if (type === "override") {
-                    // Extract the new olIndex from the override sequence
-                    olIndex = parseInt(elementText.match(/\d+/)[0], 10);
-                    elements.push({ type, match: elementText, index });
-                    index += match[0].length; // Move index past the matched element
+                    olIndex = parseInt(match[1], 10);
+                    elements.push({ type, match: `⚡${olIndex}`, index });
+                    index += currentLine.length + 1;
                     matched = true;
                     break;
                 }
 
-                // Handling explanation text
+                // Handle explanation blocks
                 if (type === "expl") {
-                    const listType = "expl";
-                    const explItems = [];
-                    let itemIndex = 0;
-
-                    while (itemIndex < elementText.length) {
-                        const linkMatch = /<a href="[^"]+">[^<]+<\/a>/.exec(
-                            elementText.slice(itemIndex)
-                        );
-                        if (linkMatch && linkMatch.index === 0) {
-                            explItems.push({
-                                type: "link",
-                                match: linkMatch[0],
-                                index: itemIndex
-                            });
-                            itemIndex += linkMatch[0].length;
-                        } else {
-                            const nextLinkIndex = elementText.indexOf(
-                                "<a href=",
-                                itemIndex
-                            );
-                            const endIndex =
-                                nextLinkIndex !== -1
-                                    ? nextLinkIndex
-                                    : elementText.length;
-                            const plainTextMatch = elementText.slice(
-                                itemIndex,
-                                endIndex
-                            );
-                            if (plainTextMatch.trim()) {
-                                explItems.push({
-                                    type: "plainText",
-                                    match: plainTextMatch,
-                                    index: itemIndex
-                                });
-                            }
-                            itemIndex = endIndex;
-                        }
-                    }
-                    // Add the list item with the numbering adjusted and nested structure
+                    const explContent = match[1].trim();
+                    const explItems = parseInlineElements(explContent);
                     elements.push({
-                        type: listType,
-                        match: "",
+                        type: "expl",
+                        match: "ℹ️",
                         subItems: explItems,
                         index
                     });
-                    index += match[0].length; // Move index past the matched element
+                    index += currentLine.length + 1;
                     matched = true;
                     break;
                 }
 
-                // Special handling for ordered list items
+                // Handle ordered lists
                 if (type === "ol") {
-                    const listType = "ol";
-                    const listItems = [];
-                    let itemIndex = 0;
-
-                    while (itemIndex < elementText.length) {
-                        const linkMatch = /<a href="[^"]+">[^<]+<\/a>/.exec(
-                            elementText.slice(itemIndex)
-                        );
-                        if (linkMatch && linkMatch.index === 0) {
-                            listItems.push({
-                                type: "link",
-                                match: linkMatch[0],
-                                index: itemIndex
-                            });
-                            itemIndex += linkMatch[0].length;
-                        } else {
-                            const nextLinkIndex = elementText.indexOf(
-                                "<a href=",
-                                itemIndex
-                            );
-                            const endIndex =
-                                nextLinkIndex !== -1
-                                    ? nextLinkIndex
-                                    : elementText.length;
-                            const plainTextMatch = elementText.slice(
-                                itemIndex,
-                                endIndex
-                            );
-                            if (plainTextMatch.trim()) {
-                                listItems.push({
-                                    type: "plainText",
-                                    match: plainTextMatch,
-                                    index: itemIndex
-                                });
-                            }
-                            itemIndex = endIndex;
-                        }
-                    }
-
-                    // Add the list item with the numbering adjusted and nested structure
+                    const listContent = match[1].trim();
+                    const listItems = parseInlineElements(listContent);
                     elements.push({
-                        type: listType,
+                        type: "ol",
                         match: `${olIndex}. `,
                         subItems: listItems,
                         index
                     });
-                    olIndex++; // Increment the ordered list index
-                    index += match[0].length; // Move index past the matched element
+                    olIndex++;
+                    index += currentLine.length + 1;
                     matched = true;
                     break;
                 }
 
-                // Special handling for unordered list items
+                // Handle unordered lists
                 if (type === "ul") {
-                    const listType = "ul";
-                    const listItems = [];
-                    let itemIndex = 0;
-
-                    while (itemIndex < elementText.length) {
-                        const linkMatch = /<a href="[^"]+">[^<]+<\/a>/.exec(
-                            elementText.slice(itemIndex)
-                        );
-                        if (linkMatch && linkMatch.index === 0) {
-                            listItems.push({
-                                type: "link",
-                                match: linkMatch[0],
-                                index: itemIndex
-                            });
-                            itemIndex += linkMatch[0].length;
-                        } else {
-                            const nextLinkIndex = elementText.indexOf(
-                                "<a href=",
-                                itemIndex
-                            );
-                            const endIndex =
-                                nextLinkIndex !== -1
-                                    ? nextLinkIndex
-                                    : elementText.length;
-                            const plainTextMatch = elementText.slice(
-                                itemIndex,
-                                endIndex
-                            );
-                            if (plainTextMatch.trim()) {
-                                listItems.push({
-                                    type: "plainText",
-                                    match: plainTextMatch,
-                                    index: itemIndex
-                                });
-                            }
-                            itemIndex = endIndex;
-                        }
-                    }
-
-                    // Add the list item with nested structure
+                    const listContent = match[1].trim();
+                    const listItems = parseInlineElements(listContent);
                     elements.push({
-                        type: listType,
-                        match: "",
+                        type: "ul",
+                        match: "• ",
                         subItems: listItems,
                         index
                     });
-                    index += match[0].length; // Move index past the matched element
+                    index += currentLine.length + 1;
                     matched = true;
                     break;
                 }
 
-                // Add the matched element to the array if no inner link was found
-                elements.push({ type, match: elementText, index });
-                index += match[0].length; // Move index past the matched element
+                // Handle headers
+                if (type === "header") {
+                    const level = match[0].match(/^#+/)[0].length;
+                    elements.push({
+                        type: "header",
+                        level,
+                        match: match[1].trim(),
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                // Handle inline code
+                if (type === "inlineCode") {
+                    elements.push({
+                        type: "inlineCode",
+                        match: match[1], // Extract the content inside backticks
+                        index
+                    });
+                    index += match[0].length; // Move index past the backticks
+                    matched = true;
+                    break;
+                }
+
+                // Handle regular elements (links, subheaders)
+                elements.push({
+                    type,
+                    match: type === 'link' ? {
+                        text: match[1],
+                        url: match[2]
+                    } : elementText,
+                    index
+                });
+                index += match[0].length;
                 matched = true;
                 break;
             }
@@ -1547,20 +1178,22 @@ function parseText(text) {
 
         if (!matched) {
             let nextIndex = text.length;
+            const currentLineEnd = index + currentLine.length;
 
-            // Find the next match of any pattern in the remaining text
+            // Find the next match in the current line
             for (const { regex } of patterns) {
-                const nextMatch = regex.exec(text.slice(index));
-                if (
-                    nextMatch &&
-                    nextMatch.index !== 0 &&
-                    index + nextMatch.index < nextIndex
-                ) {
+                const nextMatch = regex.exec(currentLine);
+                if (nextMatch && nextMatch.index > 0 && index + nextMatch.index < nextIndex) {
                     nextIndex = index + nextMatch.index;
                 }
             }
 
-            const plainTextMatch = text.slice(index, nextIndex); // Get plain text until the next match
+            // If no match found in current line, move to next line
+            if (nextIndex === text.length && currentLineEnd < text.length) {
+                nextIndex = currentLineEnd + 1;
+            }
+
+            const plainTextMatch = text.slice(index, nextIndex);
             if (plainTextMatch.trim()) {
                 elements.push({
                     type: "plainText",
@@ -1568,11 +1201,59 @@ function parseText(text) {
                     index
                 });
             }
-            index = nextIndex; // Move index to the next potential match position
+            index = nextIndex;
         }
     }
 
-    return elements; // Return the array of parsed elements
+    return elements;
+}
+
+// Helper function to parse inline elements (links within text)
+function parseInlineElements(text) {
+    const inlineElements = [];
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+        // Add any text before the link
+        if (match.index > lastIndex) {
+            const plainText = text.slice(lastIndex, match.index).trim();
+            if (plainText) {
+                inlineElements.push({
+                    type: "plainText",
+                    match: plainText,
+                    index: lastIndex
+                });
+            }
+        }
+
+        // Add the link
+        inlineElements.push({
+            type: "link",
+            match: {
+                text: match[1],
+                url: match[2]
+            },
+            index: match.index
+        });
+
+        lastIndex = match.index + match[0].length;
+    }
+
+    // Add any remaining text after the last link
+    if (lastIndex < text.length) {
+        const plainText = text.slice(lastIndex).trim();
+        if (plainText) {
+            inlineElements.push({
+                type: "plainText",
+                match: plainText,
+                index: lastIndex
+            });
+        }
+    }
+
+    return inlineElements;
 }
 
 function addMessage(sender, text, isPersonal) {
@@ -2427,9 +2108,9 @@ function displayCurrentMessage(messageObj) {
 
         // Display the first response with navigation
         if (textObj) {
-            addNavigableResponse("MKSU-VA", textObj.responses, false, messageObj);
+            addNavigableResponse("PLP-VA", textObj.responses, false, messageObj);
         } else {
-            addNavigableResponse("MKSU-VA", textObj.responses, false, messageObj);
+            addNavigableResponse("PLP-VA", textObj.responses, false, messageObj);
         }
 
         if (document.querySelector(".loading")) {
@@ -2733,6 +2414,577 @@ function updateResponse(messageText, text, animateText) {
     typeResponse();
 }
 
+function updateResponse(messageText, text, animateText) {
+    messageText.innerHTML = "";
+    const parsedResponse = parseText(text);
+    console.log("parsedResponse", parsedResponse);
+    const cursorSpan = document.createElement("span");
+    cursorSpan.classList.add("cursor");
+    let partIndex = 0;
+    autoScroll = true;
+
+    const typeResponse = () => {
+        if (partIndex < parsedResponse.length) {
+            const part = parsedResponse[partIndex];
+
+            if (part.type === "link") {
+                appendLink(messageText, part.match, part.index);
+                partIndex++;
+                charIndex = 0;
+                typeResponse();
+            } else {
+                let element;
+                if (part.type === "reset") {
+                    partIndex++;
+                    charIndex = 0;
+                    typeResponse();
+                } else if (part.type === "plainText") {
+                    element = document.createElement("span");
+                    element.className = "s_p";
+                    messageText.appendChild(element);
+                    element.appendChild(cursorSpan);
+                    typeElement(element, part.match, 0, () => {
+                        checkNextLink(element);
+                    });
+                } else if (part.type === "subheader") {
+                    element = document.createElement("strong");
+                    messageText.appendChild(element);
+                    element.appendChild(cursorSpan);
+                    const subHeaderText = part.match.replace(/^\*\*|\*\*$/g, '').trim(); // Remove **
+                    typeElement(element, subHeaderText, 0, () => {
+                        checkNextLink(element);
+                    });
+                } else if (part.type === "ul") {
+                    element = document.createElement("ul");
+                    const li = document.createElement("li");
+                    element.appendChild(li);
+                    const listText = part.match.replace(/^\*\s+|\*\*$/g, '').trim(); // Remove * and **
+                    li.innerText = listText;
+                    messageText.appendChild(element);
+                    li.appendChild(cursorSpan);
+                    typeUlItems(li, part.subItems, () => {
+                        checkNextLink(li);
+                    });
+                } else if (part.type === "ol") {
+                    element = document.createElement("ol");
+                    const li = document.createElement("li");
+                    element.appendChild(li);
+                    const listText = part.match.replace(/^\d+\.\s+/, '').trim(); // Remove 1., 2., etc.
+                    li.innerText = listText;
+                    messageText.appendChild(element);
+                    li.appendChild(cursorSpan);
+                    typeOlItems(li, part.subItems, () => {
+                        checkNextLink(li);
+                    });
+                } else if (part.type === "expl") {
+                    element = document.createElement("p");
+                    element.className = "plain-text explanation";
+                    messageText.appendChild(element);
+                    element.appendChild(cursorSpan);
+                    const explText = part.match.replace(/^>\s*ℹ️\s*/, '').trim(); // Remove > ℹ️
+                    typeExplItems(element, part.subItems, () => {
+                        checkNextLink(element);
+                    });
+                }
+            }
+        } else {
+            if (document.querySelector(".loading")) {
+                stopLoader();
+            }
+        }
+    };
+
+    const typeOlItems = (listElement, listItems, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (listItems && itemIndex < listItems.length) {
+                let listItem = listItems[itemIndex];
+                let linkText = listItem.match;
+                if (listItem.type === "link") {
+                    appendLink(listElement, linkText);
+                    itemIndex++;
+                    typeNextItem();
+                } else {
+                    if (itemIndex < listItems.length) {
+                        let olText = listItem.match.replace(/^\d+\.\s+/, '').trim(); // Remove 1., 2., etc.
+                        typeElement(listElement, olText, 0, () => {
+                            itemIndex++;
+                            typeNextItem();
+                        });
+                    }
+                }
+            } else {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    const typeUlItems = (listElement, listItems, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (listItems && itemIndex < listItems.length) {
+                let listItem = listItems[itemIndex];
+                let linkText = listItem.match;
+                if (listItem.type === "link") {
+                    appendLink(listElement, linkText);
+                    itemIndex++;
+                    typeNextItem();
+                } else {
+                    if (itemIndex < listItems.length) {
+                        let liText = listItem.match.replace(/^[-*+]\s+/, '').trim(); // Remove *, -, +
+                        typeElement(listElement, liText, 0, () => {
+                            itemIndex++;
+                            typeNextItem();
+                        });
+                    }
+                }
+            } else {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    const typeExplItems = (explElement, explItems, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (explItems && itemIndex < explItems.length) {
+                let explItem = explItems[itemIndex];
+                let linkText = explItem.match;
+                if (explItem.type === "link") {
+                    appendLink(explElement, linkText);
+                    itemIndex++;
+                    typeNextItem();
+                } else {
+                    if (itemIndex < explItems.length) {
+                        let explText = explItem.match.replace(/^>\s*ℹ️\s*/, '').trim(); // Remove > ℹ️
+                        typeElement(explElement, explText, 0, () => {
+                            itemIndex++;
+                            typeNextItem();
+                        });
+                    }
+                }
+            } else {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    const typeElement = (element, content, index, callback) => {
+        if (index < content.length) {
+            const span = document.createElement("span");
+            if (!element.querySelector("span")) {
+                span.appendChild(cursorSpan);
+                element.appendChild(span);
+            }
+            element.insertAdjacentElement("beforeend", cursorSpan);
+            cursorSpan.insertAdjacentText("beforebegin", content[index]);
+            if (animateText || (generating && document.hidden)) {
+                typingAnimation = setTimeout(() => {
+                    typeElement(element, content, index + 1, callback);
+                }, 20);
+            } else {
+                typeElement(element, content, index + 1, callback);
+            }
+        } else {
+            cursorSpan.remove();
+            callback();
+        }
+        if (autoScroll && animateText) {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    };
+
+    const appendLink = (element, link, position) => {
+        element.innerHTML += link;
+    };
+
+    const checkNextLink = (currentElement) => {
+        partIndex++;
+        if (
+            partIndex < parsedResponse.length &&
+            parsedResponse[partIndex].type === "link"
+        ) {
+            appendLink(currentElement, parsedResponse[partIndex].match);
+            partIndex++;
+        }
+        typeResponse();
+    };
+
+    typeResponse();
+}
+
+function parseText(text) {
+    const patterns = [
+        { type: "link", regex: /\[([^\]]+)\]\(([^)]+)\)/ },
+        { type: "header", regex: /^#{1,6}\s+(.+)$/ },
+        { type: "subheader", regex: /\*\*§\s*([^*]+)\*\*/ },
+        { type: "ol", regex: /^\d+\.\s+(.+)$/ },
+        { type: "ul", regex: /^[-*+]\s+(.+)$/ }, // Matches unordered list items - item, * item, + item
+        { type: "reset", regex: /^>\s*⟳\s*$/ },
+        { type: "override", regex: /^>\s*⚡(\d+)\s*$/ },
+        { type: "expl", regex: /^>\s*ℹ️\s*(.+)$/ },
+        { type: "inlineCode", regex: /`([^`]+)`/ },
+    ];
+
+    let elements = [];
+    let index = 0;
+    let olIndex = 1;
+
+    while (index < text.length) {
+        let matched = false;
+        const currentLine = text.slice(index).split('\n')[0];
+
+        for (const { type, regex } of patterns) {
+            let match;
+
+            if (type === 'header' || type === 'ol' || type === 'ul' || type === 'reset' || type === 'override' || type === 'expl') {
+                match = regex.exec(currentLine);
+            } else {
+                match = regex.exec(text.slice(index));
+            }
+
+            if (match && (type === 'link' || type === 'subheader' || type === 'inlineCode' ? match.index === 0 : true)) {
+                let elementText = match[0];
+
+                if (type === "reset") {
+                    olIndex = 1;
+                    elements.push({ type, match: "⟳", index });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "override") {
+                    olIndex = parseInt(match[1], 10);
+                    elements.push({ type, match: `⚡${olIndex}`, index });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "expl") {
+                    const explContent = match[1].trim();
+                    const explItems = parseInlineElements(explContent);
+                    elements.push({
+                        type: "expl",
+                        match: "ℹ️",
+                        subItems: explItems,
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "ol") {
+                    const listContent = match[1].trim();
+                    const listItems = parseInlineElements(listContent);
+                    elements.push({
+                        type: "ol",
+                        match: `${olIndex}. `,
+                        subItems: listItems,
+                        index
+                    });
+                    olIndex++;
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "ul") {
+                    const listContent = match[1].trim();
+                    const listItems = parseInlineElements(listContent);
+                    elements.push({
+                        type: "ul",
+                        match: "• ",
+                        subItems: listItems,
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "header") {
+                    const level = match[0].match(/^#+/)[0].length;
+                    elements.push({
+                        type: "header",
+                        level,
+                        match: match[1].trim(),
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "inlineCode") {
+                    elements.push({
+                        type: "inlineCode",
+                        match: match[1],
+                        index
+                    });
+                    index += match[0].length;
+                    matched = true;
+                    break;
+                }
+
+                elements.push({
+                    type,
+                    match: type === 'link' ? {
+                        text: match[1],
+                        url: match[2]
+                    } : elementText,
+                    index
+                });
+                index += match[0].length;
+                matched = true;
+                break;
+            }
+        }
+
+        if (!matched) {
+            let nextIndex = text.length;
+            const currentLineEnd = index + currentLine.length;
+
+            for (const { regex } of patterns) {
+                const nextMatch = regex.exec(currentLine);
+                if (nextMatch && nextMatch.index > 0 && index + nextMatch.index < nextIndex) {
+                    nextIndex = index + nextMatch.index;
+                }
+            }
+
+            if (nextIndex === text.length && currentLineEnd < text.length) {
+                nextIndex = currentLineEnd + 1;
+            }
+
+            const plainTextMatch = text.slice(index, nextIndex);
+            if (plainTextMatch.trim()) {
+                elements.push({
+                    type: "plainText",
+                    match: plainTextMatch,
+                    index
+                });
+            }
+            index = nextIndex;
+        }
+    }
+
+    return elements;
+}
+
+function updateResponse(messageText, text, animateText) {
+    messageText.innerHTML = "";
+    const parsedResponse = parseText(text);
+    const cursorSpan = document.createElement("span");
+    cursorSpan.classList.add("cursor");
+    let partIndex = 0;
+    let autoScroll = true;
+
+    const typeResponse = () => {
+        if (partIndex < parsedResponse.length) {
+            const part = parsedResponse[partIndex];
+
+            if (part.type === "link") {
+                appendLink(messageText, part.match, part.index);
+                partIndex++;
+                typeResponse();
+            } else {
+                let element;
+                if (part.type === "reset") {
+                    partIndex++;
+                    typeResponse();
+                } else if (part.type === "plainText") {
+                    element = document.createElement("span");
+                    element.className = "s_p";
+                    messageText.appendChild(element);
+                    element.appendChild(cursorSpan);
+                    typeElement(element, part.match, 0, () => {
+                        checkNextLink(element);
+                    });
+                } else if (part.type === "subheader") {
+                    element = document.createElement("strong");
+                    messageText.appendChild(element);
+                    element.appendChild(cursorSpan);
+                    const subHeaderText = part.match.replace(/^\*\*|\*\*$/g, '').trim();
+                    typeElement(element, subHeaderText, 0, () => {
+                        checkNextLink(element);
+                    });
+                } else if (part.type === "ul") {
+                    element = document.createElement("ul");
+                    const li = document.createElement("li");
+                    element.appendChild(li);
+                    const listText = part.match.replace(/^[-*+]\s+/, '').trim();
+                    li.innerText = listText;
+                    messageText.appendChild(element);
+                    li.appendChild(cursorSpan);
+                    typeUlItems(li, part.subItems, () => {
+                        checkNextLink(li);
+                    });
+                } else if (part.type === "ol") {
+                    element = document.createElement("ol");
+                    const li = document.createElement("li");
+                    element.appendChild(li);
+                    const listText = part.match.replace(/^\d+\.\s+/, '').trim();
+                    li.innerText = listText;
+                    messageText.appendChild(element);
+                    li.appendChild(cursorSpan);
+                    typeOlItems(li, part.subItems, () => {
+                        checkNextLink(li);
+                    });
+                } else if (part.type === "expl") {
+                    element = document.createElement("p");
+                    element.className = "plain-text explanation";
+                    messageText.appendChild(element);
+                    element.appendChild(cursorSpan);
+                    const explText = part.match.replace(/^>\s*ℹ️\s*/, '').trim();
+                    typeExplItems(element, part.subItems, () => {
+                        checkNextLink(element);
+                    });
+                }
+            }
+        } else {
+            if (document.querySelector(".loading")) {
+                stopLoader();
+            }
+        }
+    };
+
+    const typeOlItems = (listElement, listItems, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (listItems && itemIndex < listItems.length) {
+                let listItem = listItems[itemIndex];
+                let linkText = listItem.match;
+                if (listItem.type === "link") {
+                    appendLink(listElement, linkText);
+                    itemIndex++;
+                    typeNextItem();
+                } else {
+                    if (itemIndex < listItems.length) {
+                        let olText = listItem.match.replace(/^\d+\.\s+/, '').trim();
+                        typeElement(listElement, olText, 0, () => {
+                            itemIndex++;
+                            typeNextItem();
+                        });
+                    }
+                }
+            } else {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    const typeUlItems = (listElement, listItems, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (listItems && itemIndex < listItems.length) {
+                let listItem = listItems[itemIndex];
+                let linkText = listItem.match;
+                if (listItem.type === "link") {
+                    appendLink(listElement, linkText);
+                    itemIndex++;
+                    typeNextItem();
+                } else {
+                    if (itemIndex < listItems.length) {
+                        let liText = listItem.match.replace(/^\*\s+|\*\*$/g, '').trim();
+                        typeElement(listElement, liText, 0, () => {
+                            itemIndex++;
+                            typeNextItem();
+                        });
+                    }
+                }
+            } else {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    const typeExplItems = (explElement, explItems, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (explItems && itemIndex < explItems.length) {
+                let explItem = explItems[itemIndex];
+                let linkText = explItem.match;
+                if (explItem.type === "link") {
+                    appendLink(explElement, linkText);
+                    itemIndex++;
+                    typeNextItem();
+                } else {
+                    if (itemIndex < explItems.length) {
+                        let explText = explItem.match.replace(/^>\s*ℹ️\s*/, '').trim();
+                        typeElement(explElement, explText, 0, () => {
+                            itemIndex++;
+                            typeNextItem();
+                        });
+                    }
+                }
+            } else {
+                callback();
+            }
+        };
+        typeNextItem();
+    };
+
+    const typeElement = (element, content, index, callback) => {
+        if (index < content.length) {
+            const span = document.createElement("span");
+            if (!element.querySelector("span")) {
+                span.appendChild(cursorSpan);
+                element.appendChild(span);
+            }
+            element.insertAdjacentElement("beforeend", cursorSpan);
+            cursorSpan.insertAdjacentText("beforebegin", content[index]);
+            if (animateText) {
+                setTimeout(() => {
+                    typeElement(element, content, index + 1, callback);
+                }, 20);
+            } else {
+                typeElement(element, content, index + 1, callback);
+            }
+        } else {
+            cursorSpan.remove();
+            callback();
+        }
+        if (autoScroll && animateText) {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    };
+
+    const appendLink = (element, link, position) => {
+        const a = document.createElement("a");
+        a.href = link.url;
+        a.textContent = link.text;
+        element.appendChild(a);
+    };
+
+    const checkNextLink = (currentElement) => {
+        partIndex++;
+        if (
+            partIndex < parsedResponse.length &&
+            parsedResponse[partIndex].type === "link"
+        ) {
+            appendLink(currentElement, parsedResponse[partIndex].match);
+            partIndex++;
+        }
+        typeResponse();
+    };
+
+    typeResponse();
+}
+
+
 function addNavigableResponse(
     sender,
     responses,
@@ -2884,7 +3136,7 @@ function addNavigableResponse(
                             currentIndex = messageObj.message.length - 1;
                             sourceElement.setAttribute('data-text-index', currentIndex)
                             updateMessageText(targetElement, newTextMessage)
-                            addNavigableResponse("MKSU-VA", newMessageObj.responses, false, messageObj, targetElement, true);
+                            addNavigableResponse("PLP-VA", newMessageObj.responses, false, messageObj, targetElement, true);
 
                             fetchedSug = data["suggestions"]; // const suggestions = data.suggestions;
                             // Update suggestions
@@ -3242,7 +3494,7 @@ function addNavigableResponse(
                         newTextObj.responses.push(newResponse);
                         //sourceElement.querySelector('.right').click()
                         addNavigableResponse(
-                            "MKSU-VA",
+                            "PLP-VA",
                             newTextObj.responses,
                             false,
                             messageObj,

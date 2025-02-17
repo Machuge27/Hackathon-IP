@@ -121,47 +121,47 @@
 
 /* Global styles */
 :root {
-  --text-color: #ffffff;
-  --sugession-color: #ffffff;
-  --icon-color: #acacbe;
-  --border-color: #acacbe;
-  --icon-hover-bg: #5b5e71;
-  --placeholder-color: #dcdcdc;
-  --outgoing-chat-bg: #343541;
-  --incoming-chat-bg: rgb(207, 238, 251);
-  --outgoing-chat-border: #343541;
-  --timestamp-color: #09e1e9;
-  --incoming-chat-content-border: #0625ec;
-  --outgoing-chat-content-border: #09e1e9;
-  --bg: rgb(225, 39, 193);
-  --modalbg: rgb(30, 29, 70);
-  --a-color: #e8e8edca;
-
-  --status-color: rgb(4, 255, 241);
-  --title-bg: #343541;
-  --sugession-bg: #444654;
+  --text-color: #ffffff; /* White */
+  --sugession-color: #ffffff; /* White */
+  --icon-color: #acacbe; /* Light gray */
+  --border-color: #acacbe; /* Light gray */
+  --icon-hover-bg: #0d6b72; /* Dark teal */
+  --placeholder-color: #dcdcdc; /* Light gray */
+  --outgoing-chat-bg: #004d52; /* Dark teal */
+  --incoming-chat-bg: #c1f1fa; /* Light cyan */
+  --outgoing-chat-border: #004d52; /* Dark teal */
+  --timestamp-color: #09e1e9; /* Bright cyan */
+  --incoming-chat-content-border: #004d52; /* Dark teal */
+  --outgoing-chat-content-border: #09e1e9; /* Bright cyan */
+  --bg: #008089; /* Teal */
+  --modalbg: #004d52; /* Dark teal */
+  --a-color: #e8e8ed; /* Light grayish white */
+  --status-color: #09e1e9; /* Bright cyan */
+  --title-bg: #004d52; /* Dark teal */
+  --sugession-bg: #008089; /* Teal */
 }
 
 .light-mode {
-  --text-color: #16171d;
-  --sugession-color: #ffffff;
-  --icon-color: #a9a9bc;
-  --border-color: #dba206;
-  --icon-hover-bg: #5e5ef7ad;
-  --placeholder-color: #6c6c6c;
-  --outgoing-chat-bg: #ded9d9;
-  --incoming-chat-bg: #ffffff;
-  --outgoing-chat-border: #e7e4e4;
-  --timestamp-color: #080a75;
-  --incoming-chat-content-border: #3c3ce9;
-  --outgoing-chat-content-border: #dba206;
-  --bg: rgb(225, 39, 193);
-  --modalbg: rgb(255, 255, 255);
-  --a-color: rgba(241, 253, 252, 0.639);
-  --status-color: #1303f5;
-  --title-bg: #152aefd7;
-  --sugession-bg: #3c3ce9d7;
+  --text-color: #16171d; /* Dark gray */
+  --sugession-color: #008089; /* Teal */
+  --icon-color: #004d52; /* Dark teal */
+  --border-color: #00a5b8; /* Bright teal */
+  --icon-hover-bg: #00747c; /* Medium teal */
+  --placeholder-color: #6c6c6c; /* Dark gray */
+  --outgoing-chat-bg: #c1f1fa; /* Light cyan */
+  --incoming-chat-bg: #ffffff; /* White */
+  --outgoing-chat-border: #00a5b8; /* Bright teal */
+  --timestamp-color: #004d52; /* Dark teal */
+  --incoming-chat-content-border: #00747c; /* Medium teal */
+  --outgoing-chat-content-border: #00a5b8; /* Bright teal */
+  --bg: #c1f1fa; /* Light cyan */
+  --modalbg: #ffffff; /* White */
+  --a-color: #00747c; /* Medium teal */
+  --status-color: #004d52; /* Dark teal */
+  --title-bg: #00a5b8; /* Bright teal */
+  --sugession-bg: #00747c; /* Medium teal */
 }
+
 
 body {
   background-color: var(--outgoing-chat-bg);
@@ -169,7 +169,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100dvh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Comic Sans MS";
   font-size: 12px;
   line-height: 1.3;
   overflow: hidden;
@@ -189,7 +189,9 @@ body {
   width: 100%;
   z-index: -1;
 }
-
+.s_p {
+  font-family: "Comic Sans MS";
+}
 .chat {
   background-color: var(--outgoing-chat-border);
   border-radius: 10px;
@@ -218,11 +220,14 @@ body {
   position: sticky;
 }
 
+
+
 .avatar {
   border-radius: 50%;
   height: 30px;
   overflow: hidden;
   width: 30px;
+  min-width: 30px;
   margin-left: 5px;
   margin-top: 3px;
 }
@@ -234,9 +239,8 @@ body {
 }
 
 .chat-title h1 {
-  font-size: clamp(2.5rem 3.3rem 4rem);
+  font-size: clamp(1.3rem, 1.5vw, 2rem); 
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
   letter-spacing: 4px;
   margin-right: auto;
@@ -316,7 +320,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(20, 20, 20, 0.2);
     font-size: clamp(0.8rem, 1vw, 1rem);
     /* font-size: clamp(0.7rem, 1.5vw, 1rem); */
-  font-family: Verdana, Geneva;
+  font-family: "Comic Sans MS";
 }
 
 .message-personal .message-text {
@@ -422,7 +426,7 @@ a:hover {
   flex-grow: 1;
   padding: 10px;
   font-size: 14px;
-  font-family: pt mono;
+  font-family: "Comic Sans MS";
   border-radius: 10px;
   margin-right: 10px;
   background-color: var(--outgoing-chat-border);
@@ -639,7 +643,7 @@ svg {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: normal;
-  font-family: pt mono;
+  font-family: "Comic Sans MS";
 }
 
 @media screen {
@@ -653,7 +657,6 @@ svg {
 .sp {
   font-size: clamp(0.8rem, 0.7vw, 2.5rem);
   font-weight: normal;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   justify-content: space-between;
   padding: 0 3rem;
   display: flex;
@@ -721,7 +724,7 @@ svg {
 }
 
 input:checked + .slider {
-  background-color: var(--incoming-chat-content-border);
+  background-color: var(--status-color);
   /* background-color: #2196f3; */
 }
 
@@ -836,7 +839,7 @@ input:checked + .slider:before {
 .default-text p {
   margin-top: 10px;
   font-size: clamp(0.8rem 1.1rem 2rem);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: pt mono;
 }
 
 .error {
@@ -1093,7 +1096,7 @@ ol {
   width: 80%;
   padding: 0.5rem;
   border-radius: 0.4rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Comic Sans MS";
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
   /* 

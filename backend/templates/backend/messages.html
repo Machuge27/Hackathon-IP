@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/static/iconM.png" type="image/x-icon" />
-    <title>MKSU-Vitual Assistant</title>
-    {% load static %}
+    <link rel="shortcut icon" src="{% static 'chat_app/images/PLP-logo.jpg' %}" type="image/x-icon" />
+    <title>PLP-Vitual Assistant</title>
     <link rel="stylesheet" href="{% static 'chat_app/css/styles1.css' %}">
     <link rel="stylesheet" href="{% static 'chat_app/css/pages.css' %}">
 
@@ -18,9 +18,9 @@
     <div class="chat">
         <div class="chat-title">
             <figure class="avatar">
-                <img src="{% static 'chat_app/images/iconM.PNG' %}" alt="Avatar" />
+                <img src="{% static 'chat_app/images/PLP-logo.jpg' %}" alt="Avatar" />
             </figure>
-            <h1 class="myName">MksU-Vitual Assistant</h1>
+            <h1 class="myName">Power Learn Project-Virtual Assistant</h1>
             <div>
                 <span id="initials">
                 </span>
@@ -134,8 +134,8 @@
         <div class="messages" id="messages">
             <!-- Messages will be added dynamically here -->
             <div class="default-text">
-                <h1>Make today Matter! Study at MksU.</h1>
-                <img class="image" src="{% static 'chat_app/images/icon.PNG' %}" alt="N/A" />
+                <h1>Your Journey To Greatness Begins Today!</h1>
+                <img class="image" src="{% static 'chat_app/images/logo.webp' %}" alt="N/A" />
                 <p>
                     Start a conversation and explore the power of AI.<br />
                     Your dialog will be appear here.
