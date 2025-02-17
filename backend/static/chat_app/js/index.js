@@ -2984,6 +2984,403 @@ function updateResponse(messageText, text, animateText) {
     typeResponse();
 }
 
+// Helper function to parse inline elements within list items and explanations
+function parseInlineElements(text) {
+    const inlinePatterns = [
+        { type: "link", regex: /\[([^\]]+)\]\(([^)]+)\)/ },
+        { type: "inlineCode", regex: /`([^`]+)`/ },
+        { type: "bold", regex: /\*\*([^*]+)\*\*/ }  // Added pattern for bold text
+    ];
+
+    let elements = [];
+    let index = 0;
+
+    while (index < text.length) {
+        let matched = false;
+
+        for (const { type, regex } of inlinePatterns) {
+            const match = regex.exec(text.slice(index));
+            
+            if (match && match.index === 0) {
+                if (type === "link") {
+                    elements.push({
+                        type,
+                        match: {
+                            text: match[1],
+                            url: match[2]
+                        },
+                        index: index + match.index
+                    });
+                } else {
+                    elements.push({
+                        type,
+                        match: match[1], // Capture the content between ** or `
+                        index: index + match.index
+                    });
+                }
+                index += match[0].length;
+                matched = true;
+                break;
+            }
+        }
+
+        if (!matched) {
+            const nextMatch = text.slice(index).match(/\[|`|\*\*/);  // Added ** to pattern matching
+            const nextIndex = nextMatch ? index + nextMatch.index : text.length;
+            const plainText = text.slice(index, nextIndex);
+            
+            if (plainText) {
+                elements.push({
+                    type: "plainText",
+                    match: plainText,
+                    index
+                });
+            }
+            index = nextIndex;
+        }
+    }
+    return elements;
+}
+
+function parseText(text) {
+    // Define patterns for different types of elements
+    const patterns = [
+        { type: "link", regex: /\[([^\]]+)\]\(([^)]+)\)/ },
+        { type: "header", regex: /^#{1,6}\s+(.+)$/ },
+        { type: "subheader", regex: /\*\*§\s*([^*]+)\*\*/ },
+        { type: "bold", regex: /\*\*([^*]+)\*\*/ },  // Added pattern for bold text
+        { type: "ol", regex: /^\d+\.\s+(.+)$/ },
+        { type: "ul", regex: /^[-*+]\s+(.+)$/ },
+        { type: "reset", regex: /^>\s*⟳\s*$/ },
+        { type: "override", regex: /^>\s*⚡(\d+)\s*$/ },
+        { type: "expl", regex: /^>\s*ℹ️\s*(.+)$/ },
+        { type: "inlineCode", regex: /`([^`]+)`/ }
+    ];
+
+    let elements = [];
+    let index = 0;
+    let olIndex = 1;
+
+    while (index < text.length) {
+        let matched = false;
+        const currentLine = text.slice(index).split('\n')[0];
+
+        for (const { type, regex } of patterns) {
+            let match;
+
+            if (type === 'header' || type === 'ol' || type === 'ul' || type === 'reset' || 
+                type === 'override' || type === 'expl') {
+                match = regex.exec(currentLine);
+            } else {
+                match = regex.exec(text.slice(index));
+            }
+
+            if (match && (type === 'link' || type === 'subheader' || 
+                type === 'inlineCode' || type === 'bold' ? match.index === 0 : true)) {
+                
+                if (type === "reset") {
+                    olIndex = 1;
+                    elements.push({ type, match: "⟳", index });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "override") {
+                    olIndex = parseInt(match[1], 10);
+                    elements.push({ type, match: `⚡${olIndex}`, index });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "expl") {
+                    const explContent = match[1].trim();
+                    const explItems = parseInlineElements(explContent);
+                    elements.push({
+                        type: "expl",
+                        match: "ℹ️",
+                        subItems: explItems,
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "ol") {
+                    const listContent = match[1].trim();
+                    const listItems = parseInlineElements(listContent);
+                    elements.push({
+                        type: "ol",
+                        match: `${olIndex}. `,
+                        subItems: listItems,
+                        index
+                    });
+                    olIndex++;
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "ul") {
+                    const listContent = match[1].trim();
+                    const listItems = parseInlineElements(listContent);
+                    elements.push({
+                        type: "ul",
+                        match: "• ",
+                        subItems: listItems,
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "header") {
+                    const level = match[0].match(/^#+/)[0].length;
+                    elements.push({
+                        type: "header",
+                        level,
+                        match: match[1].trim(),
+                        index
+                    });
+                    index += currentLine.length + 1;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "bold") {
+                    elements.push({
+                        type: "bold",
+                        match: match[1],  // Just the content between **
+                        index
+                    });
+                    index += match[0].length;
+                    matched = true;
+                    break;
+                }
+
+                if (type === "inlineCode") {
+                    elements.push({
+                        type: "inlineCode",
+                        match: match[1],
+                        index
+                    });
+                    index += match[0].length;
+                    matched = true;
+                    break;
+                }
+
+                elements.push({
+                    type,
+                    match: type === 'link' ? {
+                        text: match[1],
+                        url: match[2]
+                    } : match[0],
+                    index
+                });
+                index += match[0].length;
+                matched = true;
+                break;
+            }
+        }
+
+        if (!matched) {
+            let nextIndex = text.length;
+            const currentLineEnd = index + currentLine.length;
+
+            for (const { regex } of patterns) {
+                const nextMatch = regex.exec(currentLine);
+                if (nextMatch && nextMatch.index > 0 && index + nextMatch.index < nextIndex) {
+                    nextIndex = index + nextMatch.index;
+                }
+            }
+
+            if (nextIndex === text.length && currentLineEnd < text.length) {
+                nextIndex = currentLineEnd + 1;
+            }
+
+            const plainText = text.slice(index, nextIndex);
+            if (plainText.trim()) {
+                elements.push({
+                    type: "plainText",
+                    match: plainText,
+                    index
+                });
+            }
+            index = nextIndex;
+        }
+    }
+
+    return elements;
+}
+
+function updateResponse(messageText, text, animateText) {
+    messageText.innerHTML = "";
+    const parsedResponse = parseText(text);
+    const cursorSpan = document.createElement("span");
+    cursorSpan.classList.add("cursor");
+    let partIndex = 0;
+    let autoScroll = true;
+    let typingAnimation;
+    let generating = true;
+
+    const createLinkElement = (linkData) => {
+        const a = document.createElement("a");
+        a.href = linkData.url;
+        a.textContent = linkData.text;
+        a.target = "_blank";
+        return a;
+    };
+
+    const typeElement = (element, content, index, callback) => {
+        if (index < content.length) {
+            if (!element.querySelector("span")) {
+                const span = document.createElement("span");
+                span.appendChild(cursorSpan);
+                element.appendChild(span);
+            }
+            element.insertAdjacentElement("beforeend", cursorSpan);
+            cursorSpan.insertAdjacentText("beforebegin", content[index]);
+            
+            if (animateText || (generating && document.hidden)) {
+                typingAnimation = setTimeout(() => {
+                    typeElement(element, content, index + 1, callback);
+                }, 20);
+            } else {
+                typeElement(element, content, index + 1, callback);
+            }
+        } else {
+            cursorSpan.remove();
+            callback();
+        }
+        
+        if (autoScroll && animateText) {
+            messageText.parentElement.scrollTop = messageText.parentElement.scrollHeight;
+        }
+    };
+
+    const typeListItems = (listElement, items, callback) => {
+        let itemIndex = 0;
+
+        const typeNextItem = () => {
+            if (items && itemIndex < items.length) {
+                const item = items[itemIndex];
+                
+                if (item.type === "link") {
+                    listElement.appendChild(createLinkElement(item.match));
+                    itemIndex++;
+                    typeNextItem();
+                } else if (item.type === "bold") {
+                    const strong = document.createElement("strong");
+                    listElement.appendChild(strong);
+                    typeElement(strong, item.match, 0, () => {
+                        itemIndex++;
+                        typeNextItem();
+                    });
+                } else {
+                    const text = item.match;
+                    typeElement(listElement, text, 0, () => {
+                        itemIndex++;
+                        typeNextItem();
+                    });
+                }
+            } else {
+                callback();
+            }
+        };
+        
+        typeNextItem();
+    };
+
+    const typeResponse = () => {
+        if (partIndex < parsedResponse.length) {
+            const part = parsedResponse[partIndex];
+
+            if (part.type === "link") {
+                messageText.appendChild(createLinkElement(part.match));
+                partIndex++;
+                typeResponse();
+            } else if (part.type === "reset" || part.type === "override") {
+                partIndex++;
+                typeResponse();
+            } else {
+                let element;
+
+                switch (part.type) {
+                    case "plainText":
+                        element = document.createElement("span");
+                        element.className = "plain-text";
+                        element.appendChild(document.createElement("br"));
+                        break;
+                    case "header":
+                        element = document.createElement(`h${part.level}`);
+                        break;
+                    case "subheader":
+                        element = document.createElement("strong");
+                        break;
+                    case "bold":
+                        element = document.createElement("strong");
+                        break;
+                    case "ul":
+                        const ul = document.createElement("ul");
+                        element = document.createElement("li");
+                        ul.appendChild(element);
+                        messageText.appendChild(ul);
+                        break;
+                    case "ol":
+                        const ol = document.createElement("ol");
+                        element = document.createElement("li");
+                        ol.appendChild(element);
+                        messageText.appendChild(ol);
+                        break;
+                    case "expl":
+                        element = document.createElement("p");
+                        element.className = "explanation";
+                        break;
+                    case "inlineCode":
+                        element = document.createElement("code");
+                        break;
+                }
+
+                if (element) {
+                    if (!element.parentElement) {
+                        messageText.appendChild(element);
+                    }
+                    element.appendChild(cursorSpan);
+
+                    if (part.subItems) {
+                        typeListItems(element, part.subItems, () => {
+                            partIndex++;
+                            typeResponse();
+                        });
+                    } else {
+                        let content = part.match;
+                        if (part.type === "bold" || part.type === "subheader") {
+                            content = content.replace(/^\*\*|\*\*$/g, '').trim();
+                        }
+                        
+                        typeElement(element, content, 0, () => {
+                            partIndex++;
+                            typeResponse();
+                        });
+                    }
+                }
+            }
+        } else {
+            if (document.querySelector(".loading")) {
+                stopLoader();
+            }
+
+            // convertLinks(messageDiv)
+            //messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    };
+
+    typeResponse();
+}
+
 
 function addNavigableResponse(
     sender,
@@ -3113,10 +3510,11 @@ function addNavigableResponse(
                         targetElement = nextResponseElement
                     }
 
-                    simulatedFetch("/getResponse", {
+                    fetch("/api/getResponse/", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
+                            "X-CSRFToken": getCookie("csrftoken"),
                         },
                         body: JSON.stringify(prompt)
                     })
@@ -3470,10 +3868,11 @@ function addNavigableResponse(
                 if (messagesContainer.querySelector(".error-message")) {
                     messagesContainer.querySelector(".error-message").remove();
                 }
-                simulatedFetch("/getResponse", {
+                fetch("/api/getResponse/", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": getCookie("csrftoken"),
                     },
                     body: JSON.stringify(prompt)
                 })

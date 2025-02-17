@@ -4,6 +4,7 @@ from google.api_core import retry
 import chromadb
 
 from generators.utils.pdfReader import document_processor
+from pathlib import Path
 
 class GeminiEmbeddingFunction(EmbeddingFunction):
     # Specify whether to generate embeddings for documents, or queries
@@ -24,7 +25,8 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
         )
         return response["embedding"]
 
-DB_PATH = "../../backend/chroma_db"
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = str(BASE_DIR / "chroma_db")
 DB_NAME = "storage"
 
 def create_chroma_db(documents):
