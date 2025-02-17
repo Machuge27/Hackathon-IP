@@ -6,6 +6,8 @@ The **PLP Academy Chatbot** is an AI-powered assistant designed to enhance user 
 
 Live page at [https://plpchatbot.pythonanywhere.com/](https://plpchatbot.pythonanywhere.com/)
 
+![image](./backend/static/chat_app/images/Test%20Image.jpg)
+
 ## 🚀 Features  
 - 💬 **AI-powered responses** – Uses NLP to understand and respond to queries  
 - 📚 **Academy-specific knowledge** – Provides answers related to courses, schedules, and general inquiries  
@@ -47,7 +49,7 @@ Ensure you have the following installed:
 
 ### 👨‍👨‍👧‍👦 Contributors
 1. [Mutai Hillary ](https://github.com/Machuge27)
-2. [Brandistone Nyabonyi]()
+2. [Brandistone Nyabonyi](https://github.com/brandistone)
 3. [Philominah (Mentor)]()
 
 ## 🔗 Future Improvements  
