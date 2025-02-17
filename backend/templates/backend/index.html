@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLP Chatbot - Your Learning Assistant</title>
+    <title>PLP Virtual Assistant - Your Learning Companion</title>
     <style>
+        /* All existing styles remain the same */
         :root {
             --text-color: #ffffff;
             --sugession-color: #ffffff;
@@ -61,6 +62,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            font-family: "Comic Sans MS";
         }
 
         header {
@@ -130,6 +132,20 @@
             color: var(--timestamp-color);
         }
 
+        .coming-soon {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--modalbg);
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .coming-soon h3 {
+            color: var(--timestamp-color);
+            margin-bottom: 0.5rem;
+        }
+
         .cta-button {
             background-color: var(--timestamp-color);
             color: var(--modalbg);
@@ -174,32 +190,37 @@
 </head>
 <body>
     <header>
-        <h2>PLP Chatbot</h2>
+        <h2>PLP Virtual Assistant</h2>
         <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Welcome to PLP Chatbot</h1>
-            <p>Your AI-powered learning companion in the journey to become a skilled developer. Part of Power Learn Project's mission to train one million developers across Africa.</p>
+            <h1>Your 24/7 Learning Companion</h1>
+            <p>Get instant assistance, answers to your questions, and guidance on your learning journey with PLP's AI-powered virtual assistant. We're here to support your educational journey, any time you need us.</p>
         </section>
 
         <section class="features">
             <div class="feature-card">
-                <h3>24/7 Learning Support</h3>
-                <p>Get instant answers to your programming questions and guidance on your learning journey, any time of day.</p>
+                <h3>Instant Answers</h3>
+                <p>Get quick, accurate responses to your questions about PLP programs, courses, and learning resources at any time of day.</p>
             </div>
             <div class="feature-card">
-                <h3>Personalized Learning</h3>
-                <p>Receive customized recommendations and resources based on your skill level and learning goals.</p>
+                <h3>Learning Guidance</h3>
+                <p>Receive personalized guidance on your learning path, course selection, and study strategies to maximize your success.</p>
             </div>
             <div class="feature-card">
-                <h3>Community Connection</h3>
-                <p>Stay connected with the PLP community and get updates on events, workshops, and opportunities.</p>
+                <h3>Program Information</h3>
+                <p>Access detailed information about PLP's programs, enrollment processes, schedules, and upcoming opportunities.</p>
             </div>
         </section>
 
-        <a href="/api/messages" class="cta-button">Try PLP Chatbot Now</a>
+        <div class="coming-soon">
+            <h3>Coming Soon: Coding Assistant</h3>
+            <p>Our programming help feature is under development! Soon you'll be able to get assistance with coding questions, debugging, and technical concepts.</p>
+        </div>
+
+        <a href="/api/messages" class="cta-button">Chat with PLP Assistant</a>
     </main>
 
     <footer>
