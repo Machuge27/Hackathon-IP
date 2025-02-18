@@ -60,10 +60,7 @@ Ensure you have the following installed:
 ## 🔗 Future Improvements  
 - ✅ Improve chatbot’s NLP capabilities  
 - ✅ Add multilingual support  
-- ✅ Deploy to a cloud-based server  
-- ✅ Create a web-based UI  
+- ✅ Personalization
+- ✅ Coding and debugging assistant
 - ✅ Context keeping
-
-
-
 
