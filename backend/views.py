@@ -236,8 +236,8 @@ def messages_view(request):
 
 
 def chat_page(request):
-    if not request.user.is_authenticated:
-        return redirect("sign_in")
+    # if not request.user.is_authenticated:
+    #     return redirect("sign_in")
     user = request.user
     return render(
         request,

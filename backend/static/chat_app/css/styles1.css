@@ -110,6 +110,7 @@
   width: 100%;
 }
 
+
 .dropdown-content button:first-child {
   position: sticky;
   top: 0;
@@ -197,8 +198,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: auto;
-  /*right: 1rem;
   min-height: 94dvh;
+  /*right: 1rem;
     max-width: 95dvw;
             width: 35rem;
     position: absolute;*/
@@ -207,6 +208,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+
 }
 
 /* Chat title styles */
@@ -238,8 +240,8 @@ body {
   width: 100%;
 }
 
-.chat-title h1 {
-  font-size: clamp(1.3rem, 1.5vw, 2rem); 
+.myName {
+  font-size: clamp(1rem, 1.5vw, 1.5rem); 
   font-weight: bold;
   text-align: center;
   letter-spacing: 4px;
@@ -256,9 +258,9 @@ body {
   overflow: auto;
   overflow-y: auto;
   padding-bottom: 2rem;
-  min-height: 60dvh;
   height: 60dvh;
   /*
+  min-height: 60dvh;
   min-height: 500px;
       Limit messages container height
       border: 1px solid #ddd;
@@ -591,6 +593,7 @@ svg {
   cursor: pointer;
   display: inline-flex;
   border: none;
+  margin: 0 auto;
 }
 
 /*
@@ -838,8 +841,9 @@ input:checked + .slider:before {
 
 .default-text p {
   margin-top: 10px;
-  font-size: clamp(0.8rem 1.1rem 2rem);
+  font-size: clamp(1rem 2rem 2rem);
   font-family: pt mono;
+  font-weight: bold;
 }
 
 .error {
@@ -1142,3 +1146,85 @@ ol {
   height: 16px;
 }
 /* .......... */
+
+/* RESPONSIVE ADJUSTMENTS for small devices */
+@media (max-width: 768px) {
+  body{
+      height: 100dvh;
+  }
+  .myName {
+      font-size: 12px;
+      flex-wrap: nowrap;
+      padding: 0;
+      margin: 0;
+  }
+  .messages {
+      height: auto;
+      margin-bottom: auto;
+      min-height: calc(100% - 15rem);
+  }
+  /* Make chat container full width and remove border radius */
+  .chat {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    min-height: 90%;
+  }
+  .chat-title {
+    align-items: center;
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .chat-title .avatar {
+    margin-right: 0;
+  }
+  
+  /* Adjust title font and letter spacing */
+  .chat-title p {
+    font-size: 12px;
+    font-weight: normal;
+    flex-wrap: nowrap;
+    letter-spacing: 2px;
+  }
+  /* Allow message texts to use more of the screen */
+  .message-text {
+    max-width: 85%;
+    min-width: auto;
+    font-size: 12px;
+  }
+  /* Slightly increase input font-size */
+  .message-input {
+    font-size: 1rem;
+  }
+  /* Reduce the height of the audio bars */
+  .bar:first-child,
+  .bar:last-child {
+    height: 4rem;
+  }
+  .bar:nth-child(2),
+  .bar:nth-child(3) {
+    height: 6rem;
+  }
+  /* Adjust the suggestions grid for smaller screens */
+  .suggestions {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Modal adjustments */
+  .modal {
+    min-width: 90%;
+    height: 80%;
+    padding: 1rem;
+    font-size: 14px;
+  }
+  .default-text h1 {
+    font-size: 16px;
+  }
+  .default-text p {
+    font-size: 12px;
+  }
+}
+
+/* End of CSS */
+

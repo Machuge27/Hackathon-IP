@@ -2200,7 +2200,6 @@ function updateResponse(messageText, text, animateText) {
     const cursorSpan = document.createElement("span");
     cursorSpan.classList.add("cursor");
     let partIndex = 0;
-    let autoScroll = true;
     let typingAnimation;
     let generating = true;
 
@@ -2225,10 +2224,14 @@ function updateResponse(messageText, text, animateText) {
             if (animateText || (generating && document.hidden)) {
                 typingAnimation = setTimeout(() => {
                     typeElement(element, content, index + 1, callback);
-                }, 20);
+                }, 2);
             } else {
                 typeElement(element, content, index + 1, callback);
             }
+            // Automatically scroll to the bottom if autoScroll is true
+        if (autoScroll && animateText) {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
         } else {
             cursorSpan.remove();
             callback();
@@ -2237,6 +2240,7 @@ function updateResponse(messageText, text, animateText) {
         if (autoScroll && animateText) {
             messageText.parentElement.scrollTop = messageText.parentElement.scrollHeight;
         }
+        
     };
 
     const typeListItems = (listElement, items, callback) => {

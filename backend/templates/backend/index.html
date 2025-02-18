@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLP Virtual Assistant - Your Learning Companion</title>
@@ -11,25 +12,25 @@
             --sugession-color: #ffffff;
             --icon-color: #acacbe;
             --border-color: #acacbe;
-            --icon-hover-bg: #0d6b72;
+            --icon-hover-bg: #008B8B;
             --placeholder-color: #dcdcdc;
             --outgoing-chat-bg: #004d52;
             --incoming-chat-bg: #c1f1fa;
             --outgoing-chat-border: #004d52;
-            --timestamp-color: #09e1e9;
+            --timestamp-color: #E91E63;
             --incoming-chat-content-border: #004d52;
             --outgoing-chat-content-border: #09e1e9;
-            --bg: #008089;
+            --bg: #008B8B;
             --modalbg: #004d52;
-            --a-color: #e8e8ed;
             --status-color: #09e1e9;
             --title-bg: #004d52;
-            --sugession-bg: #008089;
+            --a-color: rgba(0,0,0,0.7);
+            --sugession-bg: rgba(92, 7, 44, 0.7);
         }
 
         .light-mode {
             --text-color: #16171d;
-            --sugession-color: #008089;
+            --sugession-color: #008B8B;
             --icon-color: #004d52;
             --border-color: #00a5b8;
             --icon-hover-bg: #00747c;
@@ -37,22 +38,24 @@
             --outgoing-chat-bg: #c1f1fa;
             --incoming-chat-bg: #ffffff;
             --outgoing-chat-border: #00a5b8;
-            --timestamp-color: #004d52;
+            --timestamp-color: #E91E63;
             --incoming-chat-content-border: #00747c;
             --outgoing-chat-content-border: #00a5b8;
             --bg: #c1f1fa;
             --modalbg: #ffffff;
-            --a-color: #00747c;
             --status-color: #004d52;
             --title-bg: #00a5b8;
-            --sugession-bg: #00747c;
+            --a-color: rgba(92, 180, 211, 0.8);
+            --sugession-bg: rgba(217, 158, 183, 0.85); 
         }
+
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /*<!-- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; -->*/
+            font-family: pt mono;
         }
 
         body {
@@ -96,20 +99,32 @@
         }
 
         .hero {
-            text-align: center;
-            margin-bottom: 3rem;
+            text-align: left;
+            padding: 4rem 2rem;
+            background: linear-gradient(var(--a-color), var(--sugession-bg));
+            background-size: cover;
+            background-position: center;
+            margin: 2rem auto;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .typing-text {
+            font-size: 2rem;
+            color: var(--timestamp-color);
+            margin-bottom: 2rem;
+            min-height: 2.5rem;
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--text-color);
             max-width: 800px;
-            margin: 0 auto;
+            margin-bottom: 2rem;
             line-height: 1.6;
         }
 
@@ -121,7 +136,7 @@
         }
 
         .feature-card {
-            background-color: var(--modalbg);
+            background: linear-gradient(var(--sugession-bg), var(--a-color));
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
@@ -135,7 +150,7 @@
         .coming-soon {
             text-align: center;
             padding: 1rem;
-            background-color: var(--modalbg);
+            background: linear-gradient(var(--sugession-bg), var(--a-color));
             border-radius: 10px;
             margin: 2rem auto;
             max-width: 600px;
@@ -146,9 +161,21 @@
             margin-bottom: 0.5rem;
         }
 
+        .header-btn-container {
+            display: flex;
+            align-items: center;
+        }
+        .header-btn-container img{
+            display: flex;
+            align-items: center;
+            width: 70px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
         .cta-button {
-            background-color: var(--timestamp-color);
-            color: var(--modalbg);
+            background-color: var(--outgoing-chat-content-border);
+            color: var(--timestamp-color);
             padding: 1rem 2rem;
             border: none;
             border-radius: 25px;
@@ -157,12 +184,27 @@
             transition: all 0.3s ease;
             display: block;
             width: fit-content;
-            margin: 2rem auto;
             text-decoration: none;
+            margin: 2rem auto;
         }
 
-        .cta-button:hover {
-            background-color: var(--icon-hover-bg);
+        .cta-button-h {
+            background-color: var(--outgoing-chat-content-border);
+            color: var(--timestamp-color);
+            padding: .4rem .7rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: fit-content;
+            margin: 0 1rem ;
+            text-decoration: none;
+            border: 1px solid var(--status-color);
+        }
+
+        .cta-button:hover, .cta-button-h:hover  {
+            background-color: var(--title-bg);
             color: var(--text-color);
         }
 
@@ -182,22 +224,160 @@
                 font-size: 1rem;
             }
 
+            .typing-text {
+                font-size: 1.5rem;
+            }
+
             main {
                 padding: 1rem;
             }
         }
+        /* Add these media queries to your existing CSS */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+    main {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .hero {
+        padding: 3rem 1.5rem;
+        margin: 1rem auto;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .header-btn-container {
+        gap: 0.5rem;
+    }
+    
+    .header-btn-container img {
+        width: 50px;
+        height: 35px;
+    }
+    
+    header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero {
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .typing-text {
+        font-size: 1.5rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .coming-soon {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem auto;
+    }
+    
+    .cta-button, .cta-button-h {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .theme-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* For very small devices */
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem;
+        gap: 0.5rem;
+    }
+    
+    .header-btn-container {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .header-btn-container:last-child {
+        justify-content: center;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .typing-text {
+        font-size: 1.2rem;
+    }
+    
+    .feature-card {
+        padding: 1.2rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+    
+    .coming-soon h3 {
+        font-size: 1.2rem;
+    }
+    
+    .coming-soon p {
+        font-size: 0.9rem;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 <body>
     <header>
-        <h2>PLP Virtual Assistant</h2>
-        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+        <span class="header-btn-container">
+            <img src="{% static 'chat_app/images/logo.webp' %}" alt="Avatar" />
+            <h2> Virtual Assistant</h2>
+        </span>
+        <span class="header-btn-container">
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button></span>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Your 24/7 Learning Companion</h1>
+            <h1>Coding Dreams:</h1>
+            <div class="typing-text" id="typing-text"></div>
             <p>Get instant assistance, answers to your questions, and guidance on your learning journey with PLP's AI-powered virtual assistant. We're here to support your educational journey, any time you need us.</p>
+            <a href="/api/messages" class="cta-button-h">Chat with PLP Assistant</a>
         </section>
 
         <section class="features">
@@ -220,7 +400,7 @@
             <p>Our programming help feature is under development! Soon you'll be able to get assistance with coding questions, debugging, and technical concepts.</p>
         </div>
 
-        <a href="/api/messages" class="cta-button">Chat with PLP Assistant</a>
+        <!-- <a href="/api/messages" class="cta-button">Chat with PLP Assistant</a> -->
     </main>
 
     <footer>
@@ -228,9 +408,51 @@
     </footer>
 
     <script>
+        // Theme toggle function
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
         }
+
+        // Typing effect
+        const phrases = [
+            "Build",
+            "Create",
+            "Innovate",
+            "Transform Africa",
+            "#1MillionDevs4Africa"
+        ];
+        
+        let currentPhraseIndex = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+        
+        function typeText() {
+            const textElement = document.getElementById('typing-text');
+            const currentPhrase = phrases[currentPhraseIndex];
+            
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, currentChar - 1);
+                currentChar--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, currentChar + 1);
+                currentChar++;
+            }
+            
+            if (!isDeleting && currentChar === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, pauseTime);
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            }
+            
+            const speed = isDeleting ? deletingSpeed : typingSpeed;
+            setTimeout(typeText, speed);
+        }
+        
+        document.addEventListener('DOMContentLoaded', typeText);
     </script>
 </body>
 </html>
