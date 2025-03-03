@@ -1,0 +1,5 @@
+.env
+.vscode
+Junk/
+Backend-app/
+db.sqlite3

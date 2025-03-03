@@ -1128,7 +1128,7 @@ ol {
 }
 
 .scroll-button {
-  display: none;
+  /* display: none; */
   position: sticky;
   bottom: -1rem;
   margin: auto;

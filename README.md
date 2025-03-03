@@ -1,5 +1,5 @@
 
-# 📢 PLP Academy Virtual assistant
+# 📢 PLP Academy Virtual assistant v0.1.1
 
 ## 🤖 About  
 The **PLP Academy Chatbot** is an AI-powered assistant designed to enhance user experience, provide instant responses to queries, and assist students in navigating PLP Academy’s resources efficiently.  
@@ -63,4 +63,5 @@ Ensure you have the following installed:
 - ✅ Personalization
 - ✅ Coding and debugging assistant
 - ✅ Context keeping
+- ✅ Integrating to the Academy official website
 
